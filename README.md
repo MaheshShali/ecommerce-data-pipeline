@@ -179,13 +179,47 @@ Source: Kaggle — Olist Brazilian E-commerce Dataset.
 - SQL (transformations and modeling
 - Local file-based data lake simulation
 
+## ⚖️ Design Decisions & Trade-Offs
+
+# Why Medallion Architecture?
+- Clear separation between raw, cleaned, and business data
+- Easier debugging and reprocessing
+- Trade-off: Increased storage usage due to multiple layers.
+
+# Why Keep Bronze Data Immutable?
+- Prevents accidental overwrites
+- Enables full pipeline replay
+- Improves auditing capability
+- Trade-off: Higher storage consumption.
+
+# Why SQL for Transformations?
+- Declarative and easy to review
+- Strong collaboration with analysts
+- Optimized for analytical workloads
+
+# Why Python for Pipelines?
+- Flexible ingestion logic
+- Easy integration with files and APIs
+- Extensible for orchestration tools
+  
+# Batch Processing vs Real-Time
+- This project uses batch pipelines to focus on core engineering principles.
+- Future Enhancement: Add streaming/event-based processing.
+
+# Data Quality Strategy
+Validation checks include:
+  - Null checks
+  - Duplicate detection
+  - Row-count monitoring
+Pipelines fail on critical data quality issues to protect downstream data.
+
 ## Future additions:
 
 - Apache Airflow for orchestration
 - dbt for transformation management
 - Cloud storage concepts inspired by Amazon S3
 
-##📈 Project Goals
+## 📈 Project Goals
 
 - Build an industry-style data pipeline from scratch
 - Apply Medallion Architecture principles
