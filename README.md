@@ -181,32 +181,32 @@ Source: Kaggle — Olist Brazilian E-commerce Dataset.
 
 ## ⚖️ Design Decisions & Trade-Offs
 
-# Why Medallion Architecture?
+### Why Medallion Architecture?
 - Clear separation between raw, cleaned, and business data
 - Easier debugging and reprocessing
 - Trade-off: Increased storage usage due to multiple layers.
 
-# Why Keep Bronze Data Immutable?
+### Why Keep Bronze Data Immutable?
 - Prevents accidental overwrites
 - Enables full pipeline replay
 - Improves auditing capability
 - Trade-off: Higher storage consumption.
 
-# Why SQL for Transformations?
+### Why SQL for Transformations?
 - Declarative and easy to review
 - Strong collaboration with analysts
 - Optimized for analytical workloads
 
-# Why Python for Pipelines?
+### Why Python for Pipelines?
 - Flexible ingestion logic
 - Easy integration with files and APIs
 - Extensible for orchestration tools
   
-# Batch Processing vs Real-Time
+### Batch Processing vs Real-Time
 - This project uses batch pipelines to focus on core engineering principles.
 - Future Enhancement: Add streaming/event-based processing.
 
-# Data Quality Strategy
+### Data Quality Strategy
 Validation checks include:
   - Null checks
   - Duplicate detection
