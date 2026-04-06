@@ -1,0 +1,40 @@
+2026-02-24 14:53:12,452 | INFO | Starting stage: Bronze
+2026-02-24 14:53:12,452 | ERROR | Stage failed: Bronze | Error: 'NoneType' object is not callable
+2026-02-24 14:59:02,884 | INFO | Starting stage: Bronze
+2026-02-24 14:59:02,884 | ERROR | Stage failed: Bronze | Error: 'NoneType' object is not callable
+2026-02-24 14:59:36,816 | INFO | Starting stage: Bronze
+2026-02-24 14:59:36,818 | ERROR | Stage failed: Bronze | Error: 'NoneType' object is not callable
+2026-02-24 15:01:07,560 | INFO | Starting stage: Bronze
+2026-02-24 15:01:07,560 | INFO | Completed stage: Bronze in 0.0s
+2026-02-24 15:02:46,324 | INFO | Starting stage: Bronze
+2026-02-24 15:02:50,668 | INFO | Completed stage: Bronze in 4.34s
+2026-02-24 15:04:36,798 | INFO | Starting stage: Bronze
+2026-02-24 15:04:41,084 | INFO | Completed stage: Bronze in 4.28s
+2026-02-24 15:04:52,378 | INFO | Starting stage: Bronze
+2026-02-24 15:04:56,598 | INFO | Completed stage: Bronze in 4.22s
+2026-02-24 15:08:46,634 | INFO | Starting stage: Bronze
+2026-02-24 15:08:51,028 | INFO | Completed stage: Bronze in 4.39s
+2026-02-24 15:09:11,978 | INFO | Starting stage: Bronze
+2026-02-24 15:09:23,978 | INFO | Completed stage: Bronze in 10.58s
+2026-02-24 15:10:17,215 | INFO | Starting stage: Bronze
+2026-02-24 15:10:28,098 | INFO | Completed stage: Bronze in 9.58s
+2026-02-24 15:10:32,158 | INFO | Starting stage: Silver
+2026-02-24 15:10:44,793 | INFO | Completed stage: Silver in 12.59s
+2026-02-24 15:13:23,898 | INFO | Starting stage: Bronze - Create Tables
+2026-02-24 15:13:30,268 | INFO | Completed stage: Bronze - Create Tables in 7.23s
+2026-02-24 15:15:26,265 | INFO | Starting stage: Bronze - Create Tables
+2026-02-24 15:15:26,330 | INFO | Completed stage: Bronze - Create Tables in 0.07s
+2026-02-24 15:15:26,466 | INFO | Starting stage: Bronze - Load Data
+2026-02-24 15:15:30,944 | INFO | Completed stage: Bronze - Load Data in 4.48s
+2026-02-24 15:15:37,581 | INFO | Starting stage: Silver - Create Tables
+2026-02-24 15:15:37,619 | INFO | Completed stage: Silver - Create Tables in 0.04s
+2026-02-24 15:15:39,094 | INFO | Starting stage: Silver - Transform Data
+2026-02-24 15:15:48,108 | INFO | Completed stage: Silver - Transform Data in 9.01s
+2026-02-24 16:45:05,707 | INFO | Starting stage: Bronze - Create Tables
+2026-02-24 16:45:05,787 | INFO | Completed stage: Bronze - Create Tables in 0.08s
+2026-02-24 16:45:05,787 | INFO | Starting stage: Bronze - Load Data
+2026-02-24 16:45:08,857 | INFO | Completed stage: Bronze - Load Data in 3.07s
+2026-02-24 16:45:08,857 | INFO | Starting stage: Silver - Create Tables
+2026-02-24 16:45:08,889 | INFO | Completed stage: Silver - Create Tables in 0.03s
+2026-02-24 16:45:08,889 | INFO | Starting stage: Silver - Transform Data
+2026-02-24 16:45:14,937 | INFO | Completed stage: Silver - Transform Data in 6.05s

@@ -87,20 +87,6 @@ CREATE TABLE bronze.order_payments (
 
 GO
 
-IF OBJECT_ID('bronze.order_reviews','U') IS NOT NULL
-    DROP TABLE bronze.order_reviews
-CREATE TABLE bronze.order_reviews (
-    review_id VARCHAR(100),
-    order_id VARCHAR(100),
-    review_score INT,
-    review_comment_title VARCHAR(255),
-    review_comment_message VARCHAR(MAX),
-    review_creation_date DATETIME2,
-    review_answer_timestamp DATETIME2
-);
-
-GO
-
 IF OBJECT_ID('bronze.geolocation','U') IS NOT NULL
     DROP TABLE bronze.geolocation
 CREATE TABLE bronze.geolocation (

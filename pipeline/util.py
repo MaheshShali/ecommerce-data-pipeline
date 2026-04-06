@@ -1,14 +1,24 @@
-import databaseConfig as db
+from pipeline import databaseConfig as db
 import pandas as pd
 import os
 import re
+import logging
+import time
 
-BRONZE_OUTPUT_FOLDER = 'data/bronze'
-bronze_table = ['orders','customers','products']
+def run_stage(stage_name, stage):
+    start = time.time()
+    logging.info(f"Starting stage: {stage_name}")
+    try:
+        stage()
+        duration = round(time.time() - start, 2)
+        logging.info(f"Completed stage: {stage_name} in {duration}s")
+        return True
+    except Exception as e:
+        logging.error(f"Stage failed: {stage_name} | Error: {str(e)}")
+        return False
 
 def run_sql_script(file_path,title):
     try:
-        db.conn.autocommit = False
         with open(file_path, 'r', encoding='utf-8') as file:
             sql_script = file.read()
 
@@ -21,18 +31,14 @@ def run_sql_script(file_path,title):
                     print ('Failed to exceute the SQL statement.')
                     print(e)
                     raise
-        db.conn.commit()
     except Exception as e :
-        db.conn.rollback()
         print(f"Pipeline failed during execution of {file_path}")
         print(e)
         raise
-    finally:
-        print(title)
 
-def export_bronze_to_csv(table_name):
+def export_table_to_csv(table_name,folder):
 
-    output_path = os.path.join(BRONZE_OUTPUT_FOLDER, f"{table_name}.csv")
+    output_path = os.path.join(folder, f"{table_name}.csv")
     if os.path.isfile(output_path) or os.path.islink(output_path):
         os.remove(output_path)
 
@@ -43,10 +49,3 @@ def export_bronze_to_csv(table_name):
     df.to_csv(output_path, index=False)
 
     print(f"{table_name}.csv created.")
-
-def create_tables():
-    run_sql_script('sql/bronze/ddl_bronze.sql','Creating tables')
-
-def load_bronze():
-    run_sql_script('sql/bronze/load_bronze.sql','Inserting values')
-
